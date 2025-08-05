@@ -2,6 +2,7 @@
 import React, { useState } from 'react';
 import image1 from "@/images/Home/Screenshot_2025-07-22_215836-removebg-preview.png";
 import Image from 'next/image';
+import Link from 'next/link';
 
 function Navbar() {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -24,12 +25,14 @@ function Navbar() {
 
     
         <div>
-          <ul className='hidden md:flex text-black space-x-6 lg:space-x-14'>
-            <li className='cursor-pointer'>Participate</li>
-            <li className='cursor-pointer'>Products</li>
-            <li className='cursor-pointer'>Developers</li>
-            <li className='cursor-pointer'>Network</li>
-            <li className='cursor-pointer'>News & Events</li>
+          <ul className='hidden md:flex text-black space-x-6 lg:space-x-20'>
+            <li className='cursor-pointer'>Home</li>
+            
+            <li className='cursor-pointer'><Link href="https://flare.network/wallets">Participate</Link></li>
+            <li className='cursor-pointer'><Link href="https://flare.network/products/fassets">Products</Link></li>
+            <li className='cursor-pointer'><Link href="https://flare.network/resources/developer-hub">Developers</Link></li>
+                        <li className='cursor-pointer'><Link href="https://flarescan.com/">Network</Link></li>
+
           </ul>
 
           <div className='md:hidden'>
