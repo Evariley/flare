@@ -286,10 +286,13 @@ export default function Home() {
           ecosystem announcements and global events.
         </p>
       </div>
-      <div>
-        <button className="bg-[#C1003F] px-6 py-2 rounded-xl text-white hover:bg-pink-800 duration-200">
+            <div>
+              <Link href="https://flare.network/sign-up">
+               <button className="bg-[#C1003F] px-6 py-2 rounded-xl text-white hover:bg-pink-800 duration-200">
           Subscribe
         </button>
+              </Link>
+    \
       </div>
     </div>
     <div className="lg:flex hidden justify-center lg:justify-end mt-6 lg:mt-0 ">
@@ -315,10 +318,10 @@ export default function Home() {
 
   
       <div className="flex flex-wrap sm:flex-nowrap justify-center sm:justify-start gap-3 sm:space-x-5 px-2 sm:px-9">
-        {["Support", "Our Team", "Brand Assets", "Terms & Conditions", "UK Disclaimer"].map((item, i) => (
-          <Link href="#" key={i}>
+              {[{ desc: "Support", link: "https://flare.network/resources/technical-support" }, { desc: "Our Team", link: "https://flare.network/team" }, { desc: "Brand Assets", link: "https://flare.network/team" }, { desc: "Terms & Conditions", link: "https://flare.network/privacy-policy" }, { desc:"UK Disclaimer", link: "https://flare.network/uk-disclaimer"}].map((item, i) => (
+          <Link href={item.link} key={i}>
             <div className="border-b-2 sm:border-b-0 sm:border-r-2 text-sm text-black/40 pr-0 sm:pr-4 hover:text-[#C1003F] cursor-pointer">
-              <p>{item}</p>
+              <p>{item.desc}</p>
             </div>
           </Link>
         ))}
@@ -330,9 +333,9 @@ export default function Home() {
 
   
       <div className="flex justify-center sm:justify-start space-x-5 px-2 sm:px-8">
-        {[FaGithub, FaYoutube, FaLinkedin, FaDiscord, FaXbox, FaMedium, FaTelegram].map((Icon, i) => (
-          <Link href="#" key={i}>
-            <Icon size={18} className="text-black/40 hover:text-[#C1003F] cursor-pointer" />
+              {[{ icon: FaGithub, link: "https://github.com/flare-foundation" }, { icon: FaYoutube, link: "https://www.youtube.com/c/Flare_Networks" }, { icon: FaLinkedin, link: "https://www.linkedin.com/company/flarenetwork/" }, { icon: FaDiscord, link: "https://discord.com/invite/flarenetwork" }, { icon: FaXbox, link: "https://x.com/FlareNetworks" }, { icon: FaMedium, link: "https://medium.com/flarenetwork" }, { icon: FaTelegram, link: "https://t.me/FlareNetwork" }].map((item, i) => (
+          <Link href={item.link} key={i}>
+            <item.icon size={18} className="text-black/40 hover:text-[#C1003F] cursor-pointer" />
           </Link>
         ))}
       </div>
@@ -342,9 +345,9 @@ export default function Home() {
     <div className="py-5 space-y-4">
       <h1 className="text-black/40 font-semibold">Explore</h1>
       <div className="space-y-5">
-        {["Flarescan", "Flare Portal", "System Explorer", "Developer Hub"].map((item, i) => (
-          <Link href="#" key={i} className="flex items-center space-x-4 text-black/40 hover:text-[#C1003F] cursor-pointer">
-            <p className="text-sm">{item}</p>
+              {[{ desc: "Flarescan", link: "https://flarescan.com/" }, { desc: "Flare Portal", link: "https://portal.flare.network/" }, { desc: "System Explorer", link: "https://flare-systems-explorer.flare.network/" }, {desc:"Developer Hub", link:"https://dev.flare.network/"}].map((item, i) => (
+          <Link href={item.link} key={i} className="flex items-center space-x-4 text-black/40 hover:text-[#C1003F] cursor-pointer">
+            <p className="text-sm">{item.desc}</p>
             <GoArrowUpRight />
           </Link>
         ))}
@@ -355,7 +358,7 @@ export default function Home() {
     <div className="py-5 space-y-4">
       <h1 className="text-black/40 font-semibold">Flare</h1>
       <div className="space-y-5">
-        {["Grants", "Careers", "Newsletter", "Whitepapers"].map((item, i) => (
+              {[{ desc: "Grants", link: "https://flare.network/resources/grants" }, { desc: "Careers", link: "https://flare.network/careers" }, { desc: "Newsletter", link: "https://flare.network/sign-up" }, { desc:"Whitepapers", link:"https://dev.flare.network/support/flr/"}].map((item, i) => (
           <Link href="#" key={i} className="text-black/40 hover:text-[#C1003F] cursor-pointer flex items-center space-x-4">
             <p className="text-sm">{item}</p>
           </Link>
