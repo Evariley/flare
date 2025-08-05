@@ -24,6 +24,7 @@ import { GoArrowUpRight } from "react-icons/go";
 import Link from "next/link";
 import Card from "./home/card/page";
 import CarouselAutoPlay from "./home/carousel/page";
+import { link } from "fs";
 export default function Home() {
   return (
     <div className="bg-white">
@@ -119,9 +120,11 @@ export default function Home() {
           <p className="text-gray-500 text-xs sm:text-sm">NEW USE CASES</p>
         </div>
         <div className="space-y-8">
-          <div className="group">
-            <div className="group-hover:bg-[#FFE4E7] bg-[#FFF3F4] p-4 rounded-2xl">
-              <div className="flex items-center space-x-2">
+                <div className="group">
+                  
+                  <div className="group-hover:bg-[#FFE4E7] bg-[#FFF3F4] p-4 rounded-2xl">
+                    <Link href="https://flare.network/products/fassets" >
+                        <div className="flex items-center space-x-2">
                 <Image src={image9} className="w-8 sm:w-10" alt="" />
                 <div className="flex items-center space-x-2">
                   <h1 className="text-[#C1003F] text-sm sm:text-base group-hover:underline underline-offset-7">
@@ -129,8 +132,11 @@ export default function Home() {
                   </h1>
                   <FaArrowRight className="text-[#C1003F]" />
                 </div>
-              </div>
-              <p className="text-black text-sm sm:text-base mt-2">Securely explore XRPfi, BTCfi and DOGEfi</p>
+                      </div>
+                                    <p className="text-black text-sm sm:text-base mt-2">Securely explore XRPfi, BTCfi and DOGEfi</p>
+
+                    </Link>
+          
             </div>
           </div>
 
@@ -138,12 +144,13 @@ export default function Home() {
             <p className="text-gray-400 text-xs sm:text-sm">ENSHRINED DATA PROTOCOLS</p>
 
             {[
-              { img: image11, title: "FDC", desc: "Reliably access external blockchain events and real-world APIs" },
-              { img: image10, title: "FTSO", desc: "Easily integrate fast, secure, and decentralized price feeds" },
-            ].map((item, idx) => (
-              <div key={idx} className="group">
-                <div className="group-hover:bg-[#FFE4E7] bg-[#FFF3F4] p-4 rounded-2xl">
-                  <div className="flex items-center space-x-2">
+              { img: image11, link: "https://flare.network/products/flare-data-connector", title: "FDC", desc: "Reliably access external blockchain events and real-world APIs" },
+              { img: image10, link:"https://flare.network/products/flare-time-series-oracle", title: "FTSO", desc: "Easily integrate fast, secure, and decentralized price feeds" },
+                  ].map((item, idx) => (
+              <a href={item.link} key={idx}   className={`group block ${idx !== 0 ? 'mt-4' : ''}`}>
+                       
+                <div className="group-hover:bg-[#FFE4E7]   bg-[#FFF3F4] p-4 rounded-2xl">
+                  <div className="flex items-center space-x-2 ">
                     <Image src={item.img} className="w-8 sm:w-10" alt="" />
                     <p className="text-[#C1003F] text-sm sm:text-base group-hover:underline underline-offset-7">
                       {item.title}
@@ -152,7 +159,9 @@ export default function Home() {
                   </div>
                   <p className="text-black text-sm sm:text-base mt-2">{item.desc}</p>
                 </div>
-              </div>
+            
+              </a>
+             
             ))}
           </div>
         </div>
