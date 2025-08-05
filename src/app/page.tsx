@@ -359,8 +359,8 @@ export default function Home() {
       <h1 className="text-black/40 font-semibold">Flare</h1>
       <div className="space-y-5">
               {[{ desc: "Grants", link: "https://flare.network/resources/grants" }, { desc: "Careers", link: "https://flare.network/careers" }, { desc: "Newsletter", link: "https://flare.network/sign-up" }, { desc:"Whitepapers", link:"https://dev.flare.network/support/flr/"}].map((item, i) => (
-          <Link href="#" key={i} className="text-black/40 hover:text-[#C1003F] cursor-pointer flex items-center space-x-4">
-            <p className="text-sm">{item}</p>
+          <Link href={item.link} key={i} className="text-black/40 hover:text-[#C1003F] cursor-pointer flex items-center space-x-4">
+            <p className="text-sm">{item.desc}</p>
           </Link>
         ))}
         <Link href="#" className="flex items-center space-x-4 text-black/40 hover:text-[#C1003F] cursor-pointer">
