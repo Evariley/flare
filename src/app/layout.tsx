@@ -57,7 +57,6 @@ export default function RootLayout({
       >
                 <WalletProvider>
           {children}
-          <TawkChat/>
         </WalletProvider>
       </body>
     </html>
