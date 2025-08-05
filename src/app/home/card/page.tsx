@@ -14,21 +14,23 @@ interface CardProps {
   title: string;
   icon: IconType;
   desc: string[];
+  link: string;
 }
 
 function Card() {
   const images: CardProps[] = [
-    { id: 1, src: image1, title: "Get FlareDrops", icon: FaArrowRight, desc: ["Wrap FLR to earn rewards"] },
-    { id: 2, src: image2, title: "Delegate & Stake", icon: FaArrowRight, desc: ["A simple and effective way of boosting", "rewards while contributing to Flare's security"] },
-    { id: 3, src: image3, title: "Vote", icon: FaArrowRight, desc: ["Participate in transparent, onchain", "governance to define the future of Flare"] },
-    { id: 4, src: image4, title: "Community", icon: FaArrowRight, desc: ["Come together, share ideas, and build"] }
+    { id: 1, src: image1, link:"https://flare.network/flaredrops",title: "Get FlareDrops", icon: FaArrowRight, desc: ["Wrap FLR to earn rewards"] },
+    { id: 2, src: image2, link: "https://flare.network/delegate-and-stake", title: "Delegate & Stake", icon: FaArrowRight, desc: ["A simple and effective way of boosting", "rewards while contributing to Flare's security"] },
+    { id: 3, src: image3, link:"https://flare.network/vote", title: "Vote", icon: FaArrowRight, desc: ["Participate in transparent, onchain", "governance to define the future of Flare"] },
+    { id: 4, src: image4, link:"https://flare.network/community", title: "Community", icon: FaArrowRight, desc: ["Come together, share ideas, and build"] }
   ]
 
   return (
     <div>
       <div className='grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5 px-6 sm:px-10 lg:px-20 py-10 lg:py-20'>
         {images.map((index) => (
-          <div 
+          <a 
+            href={index.link}
             key={index.id} 
             className='border bg-[#FFF3F5] translation-transform transform group hover:scale-105 duration-300 ease-in-out hover:bg-[#FFE3E8] rounded-2xl h-full'
           >
@@ -46,7 +48,7 @@ function Card() {
                 ))}
               </div>
             </div>
-          </div>
+          </a>
         ))}
       </div>
     </div>
