@@ -26,7 +26,7 @@ function Navbar() {
     
         <div>
           <ul className='hidden md:flex text-black space-x-6 lg:space-x-20'>
-            <li className='cursor-pointer'>Home</li>
+          
             
             <li className='cursor-pointer'><Link href="https://flare.network/wallets">Participate</Link></li>
             <li className='cursor-pointer'><Link href="https://flare.network/products/fassets">Products</Link></li>
@@ -51,7 +51,6 @@ function Navbar() {
       {menuOpen && (
         <div className='md:hidden mt-4 bg-white shadow-md rounded-lg'>
           <ul className='flex flex-col space-y-4 text-black px-6 py-4'>
-           <li className='cursor-pointer'>Home</li>
             
             <li className='cursor-pointer'><Link href="https://flare.network/wallets">Participate</Link></li>
             <li className='cursor-pointer'><Link href="https://flare.network/products/fassets">Products</Link></li>
