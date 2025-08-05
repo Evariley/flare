@@ -11,6 +11,7 @@ import { IconType } from 'react-icons/lib'
 import { FaArrowRight } from 'react-icons/fa'
 import Image from 'next/image'
 import Autoplay from "embla-carousel-autoplay"
+import Link from 'next/link'
 
 interface carouselImage {
   id: number;
@@ -24,6 +25,7 @@ interface carouselImage {
   date: string;
   word: string;
   icon: IconType;
+  link: string;
 }
 
 function CarouselPlugin() {
@@ -43,7 +45,8 @@ function CarouselPlugin() {
       word: "Read More",
       icon: FaArrowRight,
       btn: "FLARE UPDATES",
-      date: "JUN 11 2025"
+      date: "JUN 11 2025",
+      link:"https://flare.network/news/vivopower-flare-deploy-xrp-institutional-yield"
     },
     {
       id: 2,
@@ -58,7 +61,8 @@ function CarouselPlugin() {
       word: "Read More",
       icon: FaArrowRight,
       btn: "FLARE UPDATES",
-      date: "MAY 14 2025"
+      date: "MAY 14 2025",
+      link:"https://flare.network/news/fxrp-on-songbird"
     },
     {
       id: 3,
@@ -69,7 +73,8 @@ function CarouselPlugin() {
       word: "Read More",
       icon: FaArrowRight,
       btn: "FLARE UPDATES",
-      date: "MAY 14 2025"
+      date: "MAY 14 2025",
+      link: "https://flare.network/news/flare-vision"
     },
   ];
 
@@ -88,11 +93,13 @@ function CarouselPlugin() {
         <CarouselContent>
           {images.map((index) => (
             <CarouselItem key={index.id} className="p-4">
-              <div className="flex items-center group justify-end space-x-2 mb-4">
-                <p className="text-[#C1003F] group-hover:text-pink-950 text-sm sm:text-base">
+              <div>
+                <Link href={index.link}  className="flex items-center group justify-end space-x-2 mb-4">
+                        <p className="text-[#C1003F] group-hover:text-pink-950 text-sm sm:text-base">
                   {index.word}
                 </p>
                 <index.icon className="text-[#C1003F] group-hover:text-pink-950" />
+                </Link>
               </div>
 
               <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
