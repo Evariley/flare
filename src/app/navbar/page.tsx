@@ -51,11 +51,12 @@ function Navbar() {
       {menuOpen && (
         <div className='md:hidden mt-4 bg-white shadow-md rounded-lg'>
           <ul className='flex flex-col space-y-4 text-black px-6 py-4'>
-            <li className='cursor-pointer'>Participate</li>
-            <li className='cursor-pointer'>Products</li>
-            <li className='cursor-pointer'>Developers</li>
-            <li className='cursor-pointer'>Network</li>
-            <li className='cursor-pointer'>News & Events</li>
+           <li className='cursor-pointer'>Home</li>
+            
+            <li className='cursor-pointer'><Link href="https://flare.network/wallets">Participate</Link></li>
+            <li className='cursor-pointer'><Link href="https://flare.network/products/fassets">Products</Link></li>
+            <li className='cursor-pointer'><Link href="https://flare.network/resources/developer-hub">Developers</Link></li>
+                        <li className='cursor-pointer'><Link href="https://flarescan.com/">Network</Link></li>
           </ul>
         </div>
       )}
