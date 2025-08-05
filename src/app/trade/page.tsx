@@ -24,7 +24,8 @@ const images: TradeImage[] = [
   { id: 9, src: image3 },
 ];
 
-const Trade: React.FC = () => {
+
+export default function Trade  () {
   return (
     <div className="w-full bg-gray-900 py-10 overflow-hidden">
       
@@ -74,4 +75,3 @@ const Trade: React.FC = () => {
   );
 };
 
-export default Trade;
